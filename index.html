@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech & Speech to Text</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <h1>VoxifyHub </h1>
+        <img src="images/logo.jpg" alt="Your Logo">
+    </header>
+    <nav>
+        <a href="start.html" class="nav-link"><i class="fa-sharp-duotone fa-solid fa-house"></i></a>
+        <a href="report.pdf" class="nav-link"><i class="fa-sharp-duotone fa-solid fa-file-pdf"></i></a>
+        <a href="DIVYANSHU_PANT_32_H1_2218732.pptx" class="nav-link"><i class="fa-sharp-duotone fa-solid fa-tv"></i></a>
+        <a href="feedback.html" class="nav-link"><i class="fa-sharp-duotone fa-solid fa-comment"></i></a>
+    </nav>
+    <section>
+        <textarea id="text-input" placeholder="Type your text here..."></textarea><br>
+
+        <div id="selectbutton">
+            <center>
+                <button onclick="return textToSpeech()"><i class="fa-sharp fa-solid fa-headphones"
+                        style="color: #e50b57;"></i> Listen</button>
+                <button onclick="return clrText()"><i class="fa-sharp fa-solid fa-delete-left"
+                        style="color: #fb0921;"></i> Clear </button>
+            </center>
+        </div>
+
+        <h2>CONVERTED TEXT:</h2>
+        <center>
+            <div id="result">
+
+            </div>
+            <button onclick="return speechToText()"><i class="fa-sharp fa-solid fa-microphone"
+                    style="color: #e11428;"></i> Speak </button>
+            <button onclick="return clrResult()"><i class="fa-sharp fa-solid fa-delete-left"
+                    style="color: #fb0921;"></i> Clear </button>
+        </center><br>
+
+        <label for="text-language" class="speech">VOICE : </label>
+        <select id="text-language">
+            <option value="en-US">English </option>
+            <option value="hi-IN">Hindi</option>
+            <option value="gu-IN">Gujarati</option>
+            <option value="kn-IN">Kannada</option>
+        </select>
+
+        <label for="speech-language" class="text">TEXT : </label>
+        <select id="speech-language">
+            <option value="en-US">English (US)</option>
+            <option value="hi-IN">Hindi (India)</option>
+            <option value="gu-IN">Gujarati</option>
+            <option value="kn-IN">Kannada</option>
+        </select>
+
+        <script>
+            function textToSpeech() {
+                var textInput = document.getElementById('text-input').value;
+                var selectedLanguage = document.getElementById('text-language').value;
+
+                var utterance = new SpeechSynthesisUtterance(textInput);
+                utterance.lang = selectedLanguage;
+                window.speechSynthesis.speak(utterance);
+
+                return false;
+            }
+
+
+
+
+            function speechToText() {
+                var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                var selectedLanguage = document.getElementById('speech-language').value;
+
+                recognition.lang = selectedLanguage;
+
+                recognition.onresult = function (event) {
+                    var result = event.results[0][0].transcript;
+                    document.getElementById('result').innerText = result;
+                };
+
+                recognition.onerror = function (event) {
+                    console.error('Speech recognition error:', event.error);
+                };
+
+                recognition.onend = function () {
+                    console.log('Speech recognition ended.');
+                };
+
+                recognition.start();
+
+                return false;
+            }
+
+            function clrText() {
+                document.getElementById('text-input').value = '';
+                return false;
+            }
+
+            function clrResult() {
+                document.getElementById('result').innerText = '';
+                return false;
+            }
+        </script>
+    </section>
+    <footer>
+        <p>&copy; copyright 2025 All rights reserved</p>
+    </footer>
+</body>
+
+</html>

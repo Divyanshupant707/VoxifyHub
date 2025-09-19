@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        }
+        .feedback-form {
+            background: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            transition: transform 0.3s ease;
+        }
+        .feedback-form:hover {
+            transform: translateY(-10px);
+        }
+        .feedback-form h2 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+        .feedback-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 400;
+            color: #555;
+        }
+        .feedback-form input, 
+        .feedback-form select, 
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        .feedback-form input:focus, 
+        .feedback-form select:focus, 
+        .feedback-form textarea:focus {
+            border-color: #9b59b6;
+            box-shadow: 0 0 8px rgba(155, 89, 182, 0.2);
+        }
+        .feedback-form button {
+            background-color: #9b59b6;
+            color: #fff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+        }
+        .feedback-form button:hover {
+            background-color: #884dad;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-form">
+        <h2>Website Feedback</h2>
+        <form action="your-server-endpoint" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="satisfaction">How satisfied are you with our website?</label>
+            <select id="satisfaction" name="satisfaction" required>
+                <option value="very-satisfied">Very satisfied</option>
+                <option value="satisfied">Satisfied</option>
+                <option value="neutral">Neutral</option>
+                <option value="dissatisfied">Dissatisfied</option>
+                <option value="very-dissatisfied">Very dissatisfied</option>
+            </select>
+
+            <label for="navigation">How easy was it to navigate our website?</label>
+            <select id="navigation" name="navigation" required>
+                <option value="very-easy">Very easy</option>
+                <option value="easy">Easy</option>
+                <option value="neutral">Neutral</option>
+                <option value="difficult">Difficult</option>
+                <option value="very-difficult">Very difficult</option>
+            </select>
+
+            <label for="found">Did you find what you were looking for?</label>
+            <select id="found" name="found" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="partially">Partially</option>
+            </select>
+
+            <label for="design">How would you rate the overall design of our website?</label>
+            <select id="design" name="design" required>
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="average">Average</option>
+                <option value="poor">Poor</option>
+                <option value="very-poor">Very poor</option>
+            </select>
+
+            <label for="comments">Any additional comments or suggestions?</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>

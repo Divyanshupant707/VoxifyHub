@@ -1,0 +1,136 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('images/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(5px);
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+header {
+    background-image: url('images/gif.webp');
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 2px 0px;
+    text-align: right;
+    animation: fadeIn 1s ease-out;
+}
+
+header img {
+    float: left;
+    height: 64px;
+    margin-top: -70px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header img:hover {
+    transform: scale(1.2);
+}
+
+
+h1 {
+    color: whitesmoke;
+}
+
+h2 {
+    color: rgb(220, 222, 220);
+    font-weight: 900;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    text-align: right;
+    padding: 1em 0;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em;
+    transition: color 0.3s ease-in-out;
+
+}
+
+.nav-link:hover {
+    color: #3498db;
+    background-color: rgb(27, 33, 16);
+}
+
+footer {
+    background-image: url('images/gif.webp');
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 400wh;
+}
+
+button {
+    background-color: rgb(6, 166, 240);
+    color: #fff;
+    padding: 1em 2em;
+    border: none;
+    font-weight: 900;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(63, 64, 68);
+    color: whitesmoke;
+}
+
+textarea {
+    background-color: rgb(63, 64, 68);
+    width: 100vh;
+    height: 100px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+section {
+    text-align: center;
+    height: 72vh;
+    margin: 7px;
+    padding: 0px;
+}
+
+select {
+    background-color: black;
+    color: whitesmoke;
+    font-weight: 900;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+select:hover {
+    background-color: rgb(6, 166, 240);
+    color: whitesmoke;
+    color: black;
+}
+
+label {
+    color: whitesmoke;
+    font-weight: 900;
+}
+
+#result {
+    background-color: rgb(63, 64, 68);
+    color: black;
+    width: 100vh;
+    height: 100px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
